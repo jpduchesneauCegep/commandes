@@ -1,0 +1,98 @@
+﻿https://openclassrooms.com/courses/gerez-vos-codes-source-avec-git
+Commande de base de git
+
+git commit
+git init --bare // À exécuter sur le serveur.
+git clone http://github.com/symfony/symfony.git
+git clone git@dfcgit.cegep-ste-foy.qc.ca:jpduchesneau/Animal.git // À exécuter sur votre machine.
+
+git status
+git diff
+git add nomfichier1 nomfichier2
+git commit -am
+Lorsque la commande commit est lancée, l’éditeur par défaut (généralement nano ou Vim) s’ouvre. 
+Vous devez sur la première ligne taper un message qui décrit à quoi correspondent vos changements.
+
+Historique du fichier  :
+Annuler un commit effectué par erreur
+git log
+git log -p
+git log --stat
+-- Naviguer dans les commit : 
+git checkout (Ce positionner)
+
+Modifier le dernier commit : 
+git commit --amend
+Annuler le dernier commit :
+git reset HEAD
+HEAD : dernier commit ;
+
+ HEAD^ : avant-dernier commit ;
+
+ HEAD^^ : avant-avant-dernier commit ;
+
+ HEAD~2 : avant-avant-dernier commit (notation équivalente) ;
+
+ d6d98923868578a7f38dea79833b56d0326fcba1 : indique un numéro de commit précis ;
+
+ d6d9892 : indique un numéro de commit précis (notation équivalente à la précédente, bien 
+ 
+ git reset --hard HEAD^   /!\ Annule les commits et perd tous les changements
+ 
+ Annuler les modifications d’un fichier avant un commit
+ git checkout nomfichier
+ 
+ git reset HEAD -- fichier_a_supprimer
+ 
+ 
+ Télécharger les nouveautés;
+ Git pull
+ 
+ Envoyer vos commits
+ git pull mettre ajour avant d'envoyer
+ git push
+ 
+ Annuler un commit publié
+ git revert 6261cc2
+ git push
+
++++++++++++++++++Les branches ++++++++++++++++++++++++
+git branch (donne les branches et l'actuelle)
+git checkout -b {branchName} (Créer la branche et si place)
+git checkout {branchName}(se placer sur la branche)
+git push origin [NouvelleBranchelocal]
+git merge {origine} {destination}
+
+git push [origine]:[branch] (suprimer la branche distante)
+
+git rebase plus avancé git merge
++++++++++++++++++Résoudre les conflits ++++++++++++++++++++++++
+Entré dans le fichier
+Faire les corrections
+Faire un git add "Fichier"
+Git commit sans message..
+Entrez dans le fichier
+Et sortir.
+Le tour est joué ;-)
+
++++++++++++++++++Qui à écrit cette partie ++++++++++++++++++++++++
+Git blame {fichier} voir les modifs
+
+git show {fichier} voir à l'intérieure d'un commit
+
++++++++++++++++++Évitez les commits superflus ++++++++++++++++++++++++
+
+git stash -- Mettre de côté temporairement
+git stash pop -- revenir plus tard
+
++++++++++++++++++Faire une pull request ++++++++++++++++++++++++
+Faire un Fork (prendre et m'en faire une copie sur mon compte)
+Clone sur mon poste de mon fork
+Lire le readme
+git checkout -b {NewBranch}
+faire les modifs
+commits
+Push to the branch git push origin mabranche
+Comparer et faire une pull request
+
+

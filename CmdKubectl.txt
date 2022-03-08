@@ -1,0 +1,12 @@
+Cmd KubeCTL
+https://kubernetes.io/fr/docs/reference/kubectl/cheatsheet/
+kubectl get pods
+kubectl get pods -o wide
+
+kubectl create deployment hello-node --image=k8s.gcr.io/echoserver:1.4
+kubectl get deployments
+
+kubectl get events
+
+kubectl delete deployment -l app=redis
+kubectl delete service -l app=redis

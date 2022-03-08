@@ -1,0 +1,43 @@
+Documentation : https://developer.vmware.com/docs/powercli/latest/products/vmwarevsphereandvsan/
+
+--- Connection :
+Connect-VIServer -Server vcenterdfc.cegep-ste-foy.qc.ca -User 'jpduchesneau@VSPHERE.DFC' -Password 'S0leil_123'
+
+-- Les VMs
+
+Get-vm
+Get VM UBR* | REMOVE-VM -DeletePermanently
+
+New-VM [-template]<template> -Name <string> [-Datastore  <StorageResource>][-DiskStorageFormat  <VirtualDiskStorageFormat>][-Location  <Folder>]
+
+--- Get-Datastore
+
+dir
+Copy-DatastoreItem -item ./nom_iso -Destination ds:/ISO
+
+
+GET-psprovider
+
+Set-Location vmstores:
+
+
+
+
+
+
+[05/01 15:07] Pierre-François Léon
+    
+$NomsDataStoreAUtiliser = @("SAN-DFC");
+$objDataStore = @();
+
+foreach ($nomDS in $NomsDataStoreAUtiliser) {​​​​​​​
+    $objDataStore += Get-Datastore $nomDS;
+}​​​​​​​
+
+New-PSDrive -Location $objDataStore[0] -name DS -PSProvider VimDatastore -Root "\"
+
+
+
+
+​
+    
